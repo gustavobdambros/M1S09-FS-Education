@@ -21,4 +21,9 @@ public class VisitanteEntity {
         this.nome = nome;
         this.telefone = telefone;
     }
+
+    public VisitanteEntity(String nome, String telefone) {
+        this.nome = nome;
+        this.telefone = telefone;
+    }
 }

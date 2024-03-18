@@ -16,9 +16,16 @@ public class LivroEntity {
     private Long id;
     private String titulo;
     private String autor;
-    private Long anoPublicacao;
+    private String anoPublicacao;
 
-    public LivroEntity(Long id, String titulo, String autor, Long anoPublicacao) {
+
+    public LivroEntity(String titulo, String autor, String anoPublicacao) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anoPublicacao = anoPublicacao;
+    }
+
+    public LivroEntity(Long id, String titulo, String autor, String anoPublicacao) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;

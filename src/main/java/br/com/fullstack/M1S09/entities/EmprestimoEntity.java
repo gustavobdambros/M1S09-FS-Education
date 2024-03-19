@@ -14,18 +14,28 @@ public class EmprestimoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    private Long id;
 
-    @Column(name = "livro_id")
-    private Long livroId;
+    @ManyToOne
+    @JoinColumn(name = "livro_id")
+    private LivroEntity livroId;
 
-    @Column(name = "membro_id")
-    private Long membroId;
+    @ManyToOne
+    @JoinColumn(name = "membro_id")
+    private MembroEntity membroId;
 
     private Date dataEmprestimo;
     private Date dataDevolucao;
 
-    public EmprestimoEntity(Long livroId, Long membroId, Date dataEmprestimo, Date dataDevolucao) {
+    public EmprestimoEntity(LivroEntity livroId, MembroEntity membroId, Date dataEmprestimo, Date dataDevolucao) {
+        this.livroId = livroId;
+        this.membroId = membroId;
+        this.dataEmprestimo = dataEmprestimo;
+        this.dataDevolucao = dataDevolucao;
+    }
+
+    public EmprestimoEntity(Long id, LivroEntity livroId, MembroEntity membroId, Date dataEmprestimo, Date dataDevolucao) {
+        this.id = id;
         this.livroId = livroId;
         this.membroId = membroId;
         this.dataEmprestimo = dataEmprestimo;

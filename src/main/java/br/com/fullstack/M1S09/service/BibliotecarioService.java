@@ -25,7 +25,7 @@ public class BibliotecarioService {
         return bibliotecarioRepository.findAll();
     }
 
-    // Método para deletar os Bibliotecários (DELETE)
+    // Método para deletar os Bibliotecários (DELETE) - Utilização de status somente em delete para demonstração
     public ResponseEntity<?> deletarBibliotecario(String id) {
         if (!bibliotecarioRepository.existsById(Long.valueOf(id))) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("O bibliotecário com ID " + id + " informado não foi encontrado.");

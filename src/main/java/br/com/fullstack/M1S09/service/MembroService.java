@@ -25,7 +25,7 @@ public class MembroService {
         return membroRepository.findAll();
     }
 
-    // Método para deletar os Membros (DELETE)
+    // Método para deletar os Membros (DELETE) - Utilização de status somente em delete para demonstração
     public ResponseEntity<?> deletarMembro(String id) {
         if (!membroRepository.existsById(Long.valueOf(id))) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("O ID " + id + " informado não foi encontrado.");

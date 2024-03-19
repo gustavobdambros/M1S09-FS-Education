@@ -25,7 +25,7 @@ public class LivroService {
         return livroRepository.findAll();
     }
 
-    // Método para deletar os Livros (DELETE)
+    // Método para deletar os Livros (DELETE) - Utilização de status somente em delete para demonstração
     public ResponseEntity<?> deletarLivro(String id) {
         if (!livroRepository.existsById(Long.valueOf(id))) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("O livro com ID " + id + " informado não foi encontrado.");

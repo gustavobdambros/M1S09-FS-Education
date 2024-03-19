@@ -25,7 +25,7 @@ public class VisitanteService {
         return visitanteRepository.findAll();
     }
 
-    // Método para deletar os Visitantes (DELETE)
+    // Método para deletar os Visitantes (DELETE) - Utilização de status somente em delete para demonstração
     public ResponseEntity<?> deletarVisitante(String id) {
         if (!visitanteRepository.existsById(Long.valueOf(id))) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("O visitante com ID " + id + " informado não foi encontrado.");
